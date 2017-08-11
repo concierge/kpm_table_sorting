@@ -7,16 +7,16 @@ if (empty($filename))
 
 $file_contents = file_get_contents($filename);
 
-$split = explode("|---|---|\n", $file_contents);
+$split = explode('|---|---|' . PHP_EOL, $file_contents);
 $tablestring = $split[1];
 
 if (empty($tablestring))
     die('Error, empty tablestring!');
 
-$new_modules_arr = $modules_arr = explode("\n", $tablestring);
+$new_modules_arr = $modules_arr = explode(PHP_EOL, $tablestring);
 
-sort($new_modules_arr, SORT_STRING);
+$sorted = natcasesort($new_modules_arr);
 
-$new_contents = $split[0] . "|---|---|\n" . implode("\n", $new_modules_arr);
-if ($new_contents != $file_contents && $new_modules_arr != $modules_arr)
-    file_put_contents($argv[1], $new_contents);
+$new_contents = $split[0] . '|---|---|' . PHP_EOL . implode(PHP_EOL, $new_modules_arr);
+if ($sorted && $new_contents != $file_contents && $new_modules_arr !== $modules_arr)
+    file_put_contents($filename, $new_contents);
