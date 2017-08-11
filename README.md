@@ -4,7 +4,7 @@ Simple script sorting [KPM table](https://github.com/concierge/Concierge/wiki/KP
 
 ## Hosting
 
-An instance of this script is currently being hosted by @p0358.
+An instance of this script is currently being hosted by [@p0358](https://github.com/p0358).
 
 ## Cron task example:
 
