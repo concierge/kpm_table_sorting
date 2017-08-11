@@ -10,6 +10,8 @@ An instance of this script is currently being hosted by [@p0358](https://github.
 
     10 8 * * * cd /var/Concierge.wiki && git pull && php /var/kpm_table_sorting/sort.php /var/Concierge.wiki/KPM-Table.md && git commit -am "[BOT ACTION] Sorting alphabetically" && git push
 
+Git will not do anything on `git commit` and `git push` if there were no changes made.
+
 ## Useful:
 
 Clone wiki:

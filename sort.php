@@ -13,10 +13,10 @@ $tablestring = $split[1];
 if (empty($tablestring))
     die('Error, empty tablestring!');
 
-$old_modules_arr = $modules_arr = explode("\n", $tablestring);
+$new_modules_arr = $modules_arr = explode("\n", $tablestring);
 
-sort($modules_arr, SORT_STRING);
+sort($new_modules_arr, SORT_STRING);
 
-$newtable = $split[0] . "|---|---|\n" . implode("\n", $modules_arr);
-if ($newtable != $file_contents && $modules_array != $old_modules_arr)
-    file_put_contents($argv[1], $newtable);
+$new_contents = $split[0] . "|---|---|\n" . implode("\n", $new_modules_arr);
+if ($new_contents != $file_contents && $new_modules_arr != $modules_arr)
+    file_put_contents($argv[1], $new_contents);
